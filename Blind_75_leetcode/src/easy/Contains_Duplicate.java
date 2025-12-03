@@ -4,8 +4,8 @@
  */
 package easy;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -15,15 +15,15 @@ import java.util.Map;
  */
 public class Contains_Duplicate {
     
-    /**Ý tưởng tôi muốn sử dụng map để lọc các phần tử trùng lặp
+    /**Ý tưởng tôi muốn sử dụng Hashset để lọc các phần tử trùng lặp
      *Nếu có phần tử trùng lặp thì size của map sẽ nhỏ hơn size của mảng ban đầu 
      */
     public boolean containsDuplicate(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
         for (int i = 0; i < nums.length; i++) {
-            map.put(nums[i], i);
+            set.add(nums[i]);
         }
-        if(map.size()!=nums.length){
+        if(set.size()!=nums.length){
             return true;
         }
         return false;
