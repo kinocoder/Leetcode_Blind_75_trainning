@@ -15,11 +15,13 @@ public class Product_of_Array_Except_Self {
     public int[] productExceptSelf(int[] nums) {
         int sizeOfNums = nums.length;
         int[] results = new int[sizeOfNums];
-        //base 
+        //Tính tích các số nguyên bên trái số đó 
         results[0] = 1;
         for (int i = 1; i < sizeOfNums; i++) {
             results[i] = results[i - 1] * nums[i - 1];
         }
+        
+        //Tính tích các số nguyên bên phải số đó và nhân vào mảng kết quả
         int suffix = 1;
         for (int i = sizeOfNums - 1; i >= 0; i--) {
             results[i] *= suffix;
